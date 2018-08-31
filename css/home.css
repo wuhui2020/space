@@ -11,8 +11,7 @@ html,body{
 	float: left;
 	background: #000;
 	position: relative;
-}
-.home-right{
+	overflow: hidden;
 }
 .home-star{
 	width: 30px;
@@ -26,23 +25,18 @@ html,body{
 	0% {opacity:0};
 	100% {opacity:1};
 }
-
-
 @-moz-keyframes flash {
 	0% {opacity:0};
 	100% {opacity:1};
 }
-
 @-webkit-keyframes flash{
 	0% {opacity:0};
 	100% {opacity:1};
 }
-
 @-o-keyframes flash {
 	0% {opacity:0};
 	100% {opacity:1};
 }
-
 .home-content{
 	width: 70%;
 	/*max-width:1200px;*/
