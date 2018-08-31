@@ -21,6 +21,11 @@ html,body{
 	position: absolute;
 	animation:flash 1s alternate infinite;
 }
+/*旋转*/
+.home-star:hover{
+	transform:scale(2,2) rotate(180deg) !important; 
+	transition:all 1s;
+}
 @keyframes flash{
 	0% {opacity:0};
 	100% {opacity:1};
