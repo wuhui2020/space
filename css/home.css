@@ -1,0 +1,56 @@
+html,body{
+	height: 100%;
+}
+.home-wrap{
+	width: 100%;
+	height: 100%;
+}
+.home-left,.home-right{
+	width: 15%;
+	height: 100%;
+	float: left;
+	background: #000;
+	position: relative;
+}
+.home-right{
+}
+.home-star{
+	width: 30px;
+	height: 30px;
+	background: url("../image/star.png") no-repeat;
+	background-size: 100%;
+	position: absolute;
+	animation:flash 1s alternate infinite;
+}
+@keyframes flash{
+	0% {opacity:0};
+	100% {opacity:1};
+}
+
+
+@-moz-keyframes flash {
+	0% {opacity:0};
+	100% {opacity:1};
+}
+
+@-webkit-keyframes flash{
+	0% {opacity:0};
+	100% {opacity:1};
+}
+
+@-o-keyframes flash {
+	0% {opacity:0};
+	100% {opacity:1};
+}
+
+.home-content{
+	width: 70%;
+	/*max-width:1200px;*/
+	height: 100%;
+	float: left;
+}
+.home-head{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid #ccc;
+}
