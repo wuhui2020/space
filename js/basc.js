@@ -35,7 +35,7 @@ function Basc(agrs){
 					if(node.length == 0){
 						node.push(document);
 					}
-					
+
 					switch(elements[i].charAt(0)){
 						case "#":
 							childElement = [];                   
@@ -588,12 +588,17 @@ function trim(str){
 	return str.replace(/(^\s*)|(\s*$)/g,"");
 }
 
-function _index(str){
+//检查某个元素在字符串中的位置
+function _index(str,elem){
 	var Index;
-	if(str.indexOf("'") != -1){
-		Index = str.indexOf("'")
-	}else if(str.indexOf('"') != -1){
-		Index = str.indexOf('"')
+	if(arguments.length == 1 ){
+		if(str.indexOf("'") != -1){
+			Index = str.indexOf("'")
+		}else if(str.indexOf('"') != -1){
+			Index = str.indexOf('"')
+		}
+	}else if(arguments.length > 1 ){
+		Index = str.indexOf(elem)
 	}
 	return Index
 }

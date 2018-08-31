@@ -4,16 +4,8 @@
 	star($(".home-right"))
 
 
-
-
-
-
-
-
-
-
-
-	//星闪炼
+	
+	//星闪炼烁
 	function star(parnetNode){
 		for(var i = 0; i < 100; i++){
 			var _span = $('<span class="home-star"></span>');
