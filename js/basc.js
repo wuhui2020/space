@@ -541,10 +541,8 @@ Basc.prototype.off = function(Events){
 }
 
 //循环遍历
-Basc.prototype.each = function(callback){
-	for(var i = 0; i < this.element.length; i++){
-		
-	}
+Basc.prototype.each = function(){
+	
 	return this;
 }
 

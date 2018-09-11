@@ -27,14 +27,25 @@
 	}
 
 	//滑动导航栏
-	$(".home-menu").find("li").hover(function(){
-		$(".home-menu").find("li").removeClass("home-selectLi");
-		$(this).addClass("home-selectLi");
-		$(".home-bgSpan").css({left:($(this).index()*175)+1+"px"})
-	},function(){
-		$(".home-bgSpan").css({left:"1px"})
-	})
-	
+	(function(){
+		var menuLeft = 1;
+		var selectLi = 0;
+		$(".home-menu").find("li").hover(function(){
+			$(".home-menu").find("li").removeClass("home-selectLi");
+			$(this).addClass("home-selectLi");
+			$(".home-bgSpan").css({left:($(this).index()*175)+1+"px"});
+		},function(){
+			$(this).removeClass("home-selectLi");
+			$(".home-bgSpan").css({left:menuLeft+"px"});
+			$(".home-menu").find("li").eq(selectLi).addClass("home-selectLi");
+		})
+		$(".home-menu").find("li").on("click",function(){
+			menuLeft = ($(this).index()*175)+1;
+			selectLi = $(this).index();
+			$(this).addClass("home-selectLi");
+			$(".home-bgSpan").css({left:($(this).index()*175)+1+"px"});
+		})
+	})();
 	
 	
 })
