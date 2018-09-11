@@ -541,13 +541,19 @@ Basc.prototype.off = function(Events){
 }
 
 //循环遍历
-Basc.prototype.each = function(){
-	
-	return this;
+Basc.prototype.each = function(callback){
+	for (var i = 0; i < this.element.length; i++ ) {
+		if ( callback.call( this.element[ i ], i, this.element[ i ] ) === false ) {
+			break;
+		}
+	}
+	return this.element;
 }
 
-
-	
+//窗口大小发生改
+window.onresize = function(){
+	window.size();
+};
 
 //==================================小方法----START===============================================	
 //现代事件绑定

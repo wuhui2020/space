@@ -1,17 +1,22 @@
 ;$(function(){
 
-	star($(".home-left"))
-	star($(".home-right"))
 
 
-	
+	star($(".home-left"));
+	star($(".home-right"));
+
+	window.size = function(){
+		star($(".home-left"));
+		star($(".home-right"));
+	}
 	//星闪炼烁
-	function star(parnetNode){
+	function star(parentNode){
+		parentNode.html("");
 		for(var i = 0; i < 100; i++){
 			var _span = $('<span class="home-star"></span>');
-			parnetNode.append(_span);
-			var Left = parseInt(Math.random()*parnetNode.offsetWidth());
-			var Top = parseInt(Math.random()*parnetNode.offsetHeight());
+			parentNode.append(_span);
+			var Left = parseInt(Math.random()*parentNode.offsetWidth());
+			var Top = parseInt(Math.random()*parentNode.offsetHeight());
 
 			$(_span).css({left:Left+"px"});
 			$(_span).css({top:Top+"px"});
@@ -47,5 +52,8 @@
 		})
 	})();
 	
+
 	
+
+
 })
