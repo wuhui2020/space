@@ -348,7 +348,7 @@ Basc.prototype.attr = function(attr,value){
 Basc.prototype.addClass = function(classname){
 	for(var i = 0; i < this.element.length; i++){
 		if(!this.element[i].className.match(new RegExp('(\s*|^)'+classname+'(\s*|$)','g'))){
-			this.element[i].className += " "+classname;
+			this.element[i].className += " "+trim(classname);
 		}
 	}
 	return this;
@@ -358,7 +358,7 @@ Basc.prototype.addClass = function(classname){
 Basc.prototype.removeClass = function(classname){
 	for(var i = 0; i < this.element.length; i++){
 		if(this.element[i].className.match(new RegExp('(\s*|^)'+classname+'(\s*|$)','g'))){
-			this.element[i].className = this.element[i].className.replace(classname,'')
+			this.element[i].className = trim(this.element[i].className.replace(classname,''))
 		}
 	}
 	return this
@@ -371,10 +371,17 @@ Basc.prototype.click = function(func){
 	return this;
 };
 
-//点击事件
+//鼠标移入事件
 Basc.prototype.mouseover = function(func){
 	for(var i = 0; i < this.element.length; i++ ){
 		this.element[i].onmouseover = func;
+	}
+	return this;
+};
+//鼠标移入事件
+Basc.prototype.mouseout = function(func){
+	for(var i = 0; i < this.element.length; i++ ){
+		this.element[i].onmouseout = func;
 	}
 	return this;
 };
@@ -529,6 +536,14 @@ Basc.prototype.on = function(Events,func){
 Basc.prototype.off = function(Events){
 	for(var i = 0; i < this.element.length; i++){
 		this.element[i]['on'+Events] = '';
+	}
+	return this;
+}
+
+//循环遍历
+Basc.prototype.each = function(callback){
+	for(var i = 0; i < this.element.length; i++){
+		
 	}
 	return this;
 }

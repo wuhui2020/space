@@ -6,7 +6,7 @@ html,body{
 	height: 100%;
 }
 .home-left,.home-right{
-	width: 15%;
+	width: 13%;
 	height: 100%;
 	float: left;
 	background: #000;
@@ -43,7 +43,7 @@ html,body{
 	100% {opacity:1};
 }
 .home-content{
-	width: 70%;
+	width: 74%;
 	/*max-width:1200px;*/
 	height: 100%;
 	float: left;
@@ -51,5 +51,59 @@ html,body{
 .home-head{
 	width: 100%;
 	height: 80px;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #eeeeee;
+}
+.home-headImg{
+	width: 60px;
+	height: 60px;
+	display: block;
+	float:left;
+	border-radius: 100%;
+	margin: 10px 30px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.home-headImg > img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.home-menuDiv{
+	width: 700px;
+	height: 100%;
+	float: right;
+	position: relative;
+}
+.home-menu{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+}
+.home-menu > li{
+	width: 174px;
+	height: 100%;
+	display: inline-block;
+	float: left;
+	line-height: 80px;
+	text-align: center;
+	font-size: 18px;
+	font-family:"微软雅黑";
+	color: #333;
+	cursor: pointer;
+	border-left: 1px solid #eee;
+}
+.home-menu > li.home-selectLi{
+	font-weight: bold;
+}
+.home-bgSpan{
+	width: 174px;
+	height: 100%;
+	display: block;
+	position: absolute;
+	background: #000;
+	left: 1px;
+	top: 0;
+	opacity: 0.4;
+	z-index: 1;
 }

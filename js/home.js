@@ -25,5 +25,16 @@
 			$(_span).css({animationDelay:rate+"s"});
 		}
 	}
+
+	//滑动导航栏
+	$(".home-menu").find("li").hover(function(){
+		$(".home-menu").find("li").removeClass("home-selectLi");
+		$(this).addClass("home-selectLi");
+		$(".home-bgSpan").css({left:($(this).index()*175)+1+"px"})
+	},function(){
+		$(".home-bgSpan").css({left:"1px"})
+	})
+	
+	
 	
 })
