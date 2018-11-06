@@ -38,12 +38,19 @@
 		$(".home-menu").find("li").hover(function(){
 			$(".home-menu").find("li").removeClass("home-selectLi");
 			$(this).addClass("home-selectLi");
-			$(".home-bgSpan").css({left:($(this).index()*175)+1+"px"});
+			// $(".home-bgSpan").css({left:($(this).index()*175)+1+"px"});
+			$(".home-bgSpan").animate({
+				left:( $(this).index()*175 )+1+"px"
+			},17);
 		},function(){
 			$(this).removeClass("home-selectLi");
-			$(".home-bgSpan").css({left:menuLeft+"px"});
+			// $(".home-bgSpan").css({left:menuLeft+"px"});
 			$(".home-menu").find("li").eq(selectLi).addClass("home-selectLi");
+			$(".home-bgSpan").animate({
+				left:menuLeft+"px"
+			},17);
 		})
+
 		$(".home-menu").find("li").on("click",function(){
 			menuLeft = ($(this).index()*175)+1;
 			selectLi = $(this).index();
@@ -52,7 +59,7 @@
 		})
 	})();
 	
-
+	
 	
 
 

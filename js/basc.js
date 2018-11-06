@@ -27,7 +27,8 @@ function Basc(agrs){
 
 			var elements = agrs.split(" ");
 			var childElement = [];
-			var node = [];
+			//节点数组
+			var node = [];     
 			if(agrs.charAt(0) != "<" && agrs.charAt(agrs.length-1) != ">"){
 
 				for(var i = 0; i < elements.length; i++){
@@ -484,6 +485,28 @@ Basc.prototype.hide = function(){
 	return this;
 };
 
+//封装animate
+Basc.prototype.animate = function(obj,speed,callback){
+	var Len = this.element.length;
+	var ELE = this.element;
+	var times;
+	clearInterval(times);
+	var i = 0;
+	times = setInterval(function(){
+		for( ; i < Len; i++){
+			for(var j in obj){
+				if("opacity" == j){
+					ELE[i].style[j] = obj[j];
+					ELE[i].style.filter = 'alpha(opacity='+ obj[j]*100 +')';
+				}else{
+					ELE[i].style[j] = obj[j];
+				}	
+			}
+			clearInterval(times);	
+		}
+	},speed);
+}
+
 //获取元素宽度、包括边框
 Basc.prototype.offsetWidth = function(){
 	for(var i = 0; i < this.element.length; i++){
@@ -543,7 +566,8 @@ Basc.prototype.off = function(Events){
 //循环遍历
 Basc.prototype.each = function(callback){
 	for (var i = 0; i < this.element.length; i++ ) {
-		if ( callback.call( this.element[ i ], i, this.element[ i ] ) === false ) {
+		var value = callback.call( this.element[ i ], i, this.element[ i ] );
+		if ( value === false ) {
 			break;
 		}
 	}
