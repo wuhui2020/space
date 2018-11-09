@@ -59,8 +59,12 @@
 		})
 	})();
 	
-	
-	
-
+	//登录框居中
+	cneter($(".home-login"))
+	//登录框拖拽
+	$(".home-login").drag([$('.home-login_move').getElement(0)])
+	$(".home-login_close").on("click",function(){
+		$(".home-login").css("display","none");
+	})
 
 })

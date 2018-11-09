@@ -4,6 +4,7 @@ html,body{
 .home-wrap{
 	width: 100%;
 	height: 100%;
+	position: relative;
 }
 .home-left,.home-right{
 	width: 13%;
@@ -42,6 +43,36 @@ html,body{
 	0% {opacity:0};
 	100% {opacity:1};
 }
+/*登入框css--------------*/
+.home-login{
+	width:400px;
+	height:360px;
+	background: #fff;
+	border:1px solid #ccc;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index: 10;
+	display: none;
+}
+.home-login_move{
+	width:100%;
+	height:36px;
+	background: #ccc;
+	cursor: move;
+}
+.home-login_close{
+	width:36px;
+	height: 36px;
+	display: block;
+	color:#fff;
+	font-size: 20px;
+	line-height: 32px;
+	text-align: center;
+	float: right;
+	cursor: pointer;
+}
+/*内容css----------------*/
 .home-content{
 	width: 74%;
 	/*max-width:1200px;*/
