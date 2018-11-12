@@ -10,12 +10,12 @@
 	//星闪炼烁
 	function star(parentNode){
 		parentNode.html("");
-		for(var i = 0; i < 30; i++){
+		for(var i = 0; i < 40; i++){
 			//创建星星
 			var _span = $('<span class="home-star"></span>');
 			parentNode.append(_span);
 			var Left = parseInt(Math.random()*parentNode.offsetWidth());
-			var Top = parseInt(Math.random()*parentNode.offsetHeight()/2);
+			var Top = parseInt(Math.random()*parentNode.offsetHeight()/1.8);
 			//随机位置
 			$(_span).css({left:Left+"px"});
 			$(_span).css({top:Top+"px"});
