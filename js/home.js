@@ -59,8 +59,9 @@
 
 	
 	
-	//登录框拖拽
-	$(".home-login").drag([$('.home-login_move').getElement(0)])
+	//登录框拖拽  
+	/*拖拽传一个数组(传移动的点，可传多个)*/
+	$(".home-login").drag([$('.home-login_move').getElement(0),$('.home-login_move2').getElement(0)])
 	//登录框隐藏
 	$(".home-login_close").on("click",function(){
 		$(".home-login").css("display","none");

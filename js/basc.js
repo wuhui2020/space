@@ -608,7 +608,6 @@ function getEvent(event){
 //居中显示
 function cneter(obj){
 	var docEleCli = document.documentElement;
-	console.log(obj.width())
 	obj.element[0].style.left = ( docEleCli.clientWidth - obj.width() )/2 + "px";
 	obj.element[0].style.top = ( docEleCli.clientHeight - obj.height() )/2 + "px";
 }
