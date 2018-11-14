@@ -14,6 +14,7 @@ Basc.prototype.extend("drag",function(){
             };
             var flag = false;
             for(var i = 0; i < tagname[0].length; i++){
+            	//判断按住那个元素可以移动
             	if(tagname[0][i].tagName == e.target.tagName && tagname[0][i].className == e.target.className){
             		flag = true;
             		break;
